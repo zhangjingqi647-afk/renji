@@ -214,7 +214,8 @@ function App() {
 
       gsap.utils.toArray('.reveal-frame').forEach((frame) => {
         const image = frame.querySelector('img')
-        if (image && !frame.classList.contains('reveal-frame--full-image')) {
+        const preserveFullImageOnMobile = window.matchMedia('(max-width: 720px)').matches && frame.closest('.vision-image')
+        if (image && !frame.classList.contains('reveal-frame--full-image') && !preserveFullImageOnMobile) {
           gsap.fromTo(image, { yPercent: 4, scale: 1.06 }, {
             yPercent: -4,
             scale: 1.06,

@@ -214,6 +214,7 @@ img { display: block; max-width: 100%; }
   .project-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .dialog-layout { grid-template-columns:1fr; }
   .dialog-visual { min-height:380px; max-height:44vh; }
+  .dialog-visual img { object-fit:contain; background:#101216; }
 }
 
 @media (max-width:720px) {
@@ -240,8 +241,9 @@ img { display: block; max-width: 100%; }
   .vision-section > .section-kicker,.vision-heading h2,.vision-heading p { grid-column:1; }
   .vision-heading h2,.lab-copy h2,.research-intro h2,.projects-heading h2 { font-size:clamp(2.75rem,12vw,3.45rem); line-height:1.02; }
   .vision-image { margin-top:60px; }
-  .vision-image img { min-height:420px; object-fit:cover; }
-  .vision-image figcaption { gap:22px; }
+  .vision-image .reveal-frame { width:100%; overflow:visible; background:transparent; }
+  .vision-image img { display:block; width:100%; height:auto; min-height:0; max-height:none; object-fit:contain; transform:none!important; }
+  .vision-image figcaption { flex-wrap:wrap; gap:12px 22px; }
   .living-lab { display:flex; flex-direction:column; }
   .lab-visual,.lab-visual img { min-height:0; }
   .research-intro { position:static; }
